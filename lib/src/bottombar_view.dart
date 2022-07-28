@@ -14,6 +14,7 @@ class GetxBottomBarView extends StatelessWidget {
     required this.routes,
     required this.bottomBar,
     this.navigationKey = 1,
+    this.drawer,
     this.appBar,
     this.defaultTransition,
     this.curve = Curves.easeOutQuint,
@@ -40,6 +41,9 @@ class GetxBottomBarView extends StatelessWidget {
 
   ///Default Transition
   Transition? defaultTransition;
+
+  ///Drawer for Scaffold
+  Drawer? drawer;
 
   ///App Bar For Scaffold
   AppBar? appBar;
@@ -126,6 +130,7 @@ class GetxBottomBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: drawer,
         appBar: appBar,
         body: Navigator(
           key: Get.nestedKey(navigationKey),
